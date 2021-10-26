@@ -1,0 +1,53 @@
+<div>
+        <a href="/"><button class="homeButton">Home</button></a>
+    </div>
+    <div>
+        <h1>Add Production Specialists</h1>
+    </div>
+    <div class="formBox">
+        <form method="post" action="">
+            <div class="formInputs">
+                <label for="firstName">First Name: </label>
+                <input type="text" name="firstName" id="firstName" placeholder="First Name">
+            </div>
+            <div class="formInputs">
+                <label for="lastName">Last Name: </label>
+                <input type="text" name="lastName" id="lastName" placeholder="Last Name">
+            </div>
+            <div class="formInputs">
+                <label for="siteID">Site ID Number: </label>
+                <input type="text" name="siteID" id="siteID" placeholder="Site ID">
+            </div>
+            <div class="formInputs">
+                <input id="form" type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+
+    <div>
+        <h1>Current Data:</h1>
+        <table id="ProductionSpecialistsTable">
+            <thead>
+                <tr>
+                    <td>Specialist ID</td>
+                    <td>First Name</td>
+                    <td>Last Name</td>
+                    <td>Site ID</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                {{#results}}
+                <tr>
+                    <td>{{this.specialistID}}</td>
+                    <td>{{this.firstName}}</td>
+                    <td>{{this.lastName}}</td>
+                    <td>{{this.siteID}}</td>
+                    <td><button id="D{{this.id}}">Delete</button></td>
+                    <td><button id="u{{this.id}}">Update</button></td>
+                </tr>
+                {{/results}}
+            </tbody>
+        </table>
+    </div>

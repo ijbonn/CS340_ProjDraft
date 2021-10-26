@@ -1,0 +1,99 @@
+<div>
+        <a href="/"><button class="homeButton">Home</button></a>
+    </div>
+
+    <div>
+        <h1>Add Production Lots</h1>
+    </div>
+    
+    <div class="formBox">
+        <form method="post" action="">
+            <div class = "formInputs">
+                <label for="lotCode">Lot Code: </label>
+                <input type="text" name="lotCode" id="lotCode" placeholder="Lot Code">
+            </div>
+            <div class = "formInputs">
+                <label for="originID">Origin ID: </label>
+                <input type="number" name="originID" id="originID" placeholder="Origin ID Number">
+            </div>
+            <div class = "formInputs">
+                <label for="sourceLotID">Source Lot ID: </label>
+                <input type="number" name="sourceLotID" id="sourceLotID" placeholder="Source Lot ID Number">
+            </div>
+            <div class = "formInputs">
+                <label for="specialistID">Specialist ID: </label>
+                <input type="number" name="specialistID" id="specialistID" placeholder="Specialist ID Number">
+            </div>
+            <div class = "formInputs">
+                <label for="fieldID">Field ID: </label>
+                <input type="number" name="fieldID" id="fieldID" placeholder="Field ID Number">
+            </div>
+            <div class = "formInputs">
+                <label for="targetKGs">Target KGs: </label>
+                <input type="number" name="targetKGs" id="targetKGs" placeholder="Target KGs">
+            </div>
+            <div class = "formInputs">
+                <label for="sowDate">Sow Date: </label>
+                <input type="date" name="sowDate" id="sowDate">
+            </div>
+            <div class = "formInputs">
+                <label for="sowKGs">Sow KGs: </label>
+                <input type="number" name="sowKGs" id="sowKGs" placeholder="Sow KGs">
+            </div>
+            <div class = "formInputs">
+                <label for="harvestDate">Harvest Date: </label>
+                <input type="date" name="harvestDate" id="harvestDate">
+            </div>
+            <div class = "formInputs">
+                <label for="harvestKGs">Harvest KGs: </label>
+                <input type="number" name="harvestKGs" id="harvestKGs" placeholder="Harvest KGs">
+            </div>
+            <div class = "formInputs">
+                <input id="form" type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+
+    <div>
+        <h1>Current Data:</h1>
+        <table id="ProductionLotsTable">
+            <thead>
+                <tr>
+                    <td>Production Lot ID</td>
+                    <td>Lot Code</td>
+                    <td>Origin ID</td>
+                    <td>Source Lot ID</td>
+                    <td>Specialist ID</td>
+                    <td>Field ID</td>
+                    <td>Target KGs</td>
+                    <td>Sow Date</td>
+                    <td>Sow KGs</td>
+                    <td>Harvest Date</td>
+                    <td>Harvest KGs</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                {{#results}}
+                <tr>
+                    <td>{{this.lotID}}</td>
+                    <td>{{this.lotCode}}</td>
+                    <td>{{this.originID}}</td>
+                    <td>{{this.sourceLotID}}</td>
+                    <td>{{this.specialistID}}</td>
+                    <td>{{this.fieldID}}</td>
+                    <td>{{this.targetKGs}}</td>
+                    <td>{{this.sowDate}}</td>
+                    <td>{{this.sowKGs}}</td>
+                    <td>{{this.harvestDate}}</td>
+                    <td>{{this.harvestKGs}}</td>
+                    <td><button id="D{{this.id}}">Delete</button></td>
+                    <td><button id="u{{this.id}}">Update</button></td>
+                </tr>
+                {{/results}}
+            </tbody>
+        </table>
+    </div>
+
+<script src="ProductionLots.js"></script>

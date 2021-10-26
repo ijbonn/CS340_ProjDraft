@@ -1,0 +1,65 @@
+<div>
+        <a href="/"><button class="homeButton">Home</button></a>
+    </div>
+    <div>
+        <h1>Add Germplasm Origins</h1>
+    </div>
+    <div class="formBox">
+        <form method="post" action="">
+            <div class="formInputs">
+                <label for="originPedigree">Origin Pedigree: </label>
+                <input type="text" name="originPedigree" id="originPedigree" placeholder="Origin Pedigree">
+            </div>
+            <div class="formInputs">
+                <label for="speciesID">Species ID: </label>
+                <input type="number" name="speciesID" id="speciesID" placeholder = "ID Number">
+            </div>
+            <div class="formInputs">
+                <label for="originalGen">Original Generation: </label>
+                <input type="text" name="originalGen" id="originalGen" placeholder="Original Gen">
+            </div>
+            <div class="formInputs">
+                <label for="sourceProgram">Source Program ID: </label>
+                <input type="number" name="sourceProgram" id="sourceProgram" placeholder = "ID Number">
+            </div>
+            <div class="formInputs">
+                <label for="marketClass">Market Class: </label>
+                <input type="text" name="marketClass" id="marketClass" placeholder="Market Class">
+            </div>
+            <div class="formInputs">
+                <input id="form" type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+
+    <div>
+        <h1>Current Data:</h1>
+        <table id="GermplasmOriginsTable">
+            <thead>
+                <tr>
+                    <td>Origin ID</td>
+                    <td>Origin pedigree</td>
+                    <td>Species ID</td>
+                    <td>Original Gen</td>
+                    <td>Source Program</td>
+                    <td>Market Class</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                {{#results}}
+                <tr>
+                    <td>{{this.originID}}</td>
+                    <td>{{this.originPedigree}}</td>
+                    <td>{{this.speciesID}}</td>
+                    <td>{{this.originalGen}}</td>
+                    <td>{{this.sourceProgram}}</td>
+                    <td>{{this.marketClass}}</td>
+                    <td><button id="D{{this.id}}">Delete</button></td>
+                    <td><button id="u{{this.id}}">Update</button></td>
+                </tr>
+                {{/results}}
+            </tbody>
+        </table>
+    </div>

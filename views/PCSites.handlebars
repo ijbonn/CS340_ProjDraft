@@ -1,0 +1,53 @@
+<div>
+        <a href="/"><button class="homeButton">Home</button></a>
+    </div>
+    <div>
+        <h1>Add PC Sites</h1>
+    </div>
+    <div class="formBox">
+        <form method="post" action="">
+            <div class="formInputs">
+                <label for="siteCity">Site City: </label>
+                <input type="text" name="siteCity" id="siteCity" placeholder="Site City">
+            </div>
+            <div class="formInputs">
+                <label for="siteState">Site State: </label>
+                <input type="text" name="siteState" id="siteState" placeholder="Site State">
+            </div>
+            <div class="formInputs">
+                <label for="siteCountry">Site Country: </label>
+                <input type="text" name="siteCountry" id="siteCountry" placeholder="Site Country">
+            </div>
+            <div class="formInputs">
+                <input id="form" type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+
+    <div>
+        <h1>Current Data:</h1>
+        <table id="PCSitesTable">
+            <thead>
+                <tr>
+                    <td>Site ID</td>
+                    <td>City</td>
+                    <td>State</td>
+                    <td>Country</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                {{#results}}
+                <tr>
+                    <td>{{this.siteID}}</td>
+                    <td>{{this.siteCity}}</td>
+                    <td>{{this.siteState}}</td>
+                    <td>{{this.siteCountry}}</td>
+                    <td><button id="D{{this.id}}">Delete</button></td>
+                    <td><button id="u{{this.id}}">Update</button></td>
+                </tr>
+                {{/results}}
+            </tbody>
+        </table>
+    </div>
