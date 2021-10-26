@@ -38,11 +38,6 @@
 	float: right;
 	display: block;
 	text-align: center;
-	color: white;
-	background-color: #007bff;
-	border: none;
-	border-radius: 3px;
-	padding: 5px 10px;
 }
 
 .topMenu li a{
