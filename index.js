@@ -1,9 +1,9 @@
 const express = require("express");
-const handlebars = require('express-handlebars').create({defaultLayour:'main'});
+const handlebars = require('express-handlebars').create({defaultLayout:'main'});
 const app = express();
-const mysql = require('./dbcon.js')
+const mysql = require('./dbcon.js');
 const bodyParser = require('body-parser');
-const cors = require('cors')
+const cors = require('cors');
 
 app.engine('handlebars',handlebars.engine);
 app.set('view engine', 'handlebars');
@@ -11,7 +11,6 @@ app.use(cors());
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
-
 app.set('port', 4747);
 
 //extracted from the get function below as I need to pull all data often to rebuild tables
