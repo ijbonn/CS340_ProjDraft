@@ -1,0 +1,99 @@
+-- Creating tables (no foreign keys yet)
+create table CropSpecies (
+	speciesID int auto_increment not null unique,
+	commonName varchar(255) not null,
+	latinSpecies varchar(255) not null,
+	latinSubspecies varchar(255),
+	latinVariety varchar(255),
+	primary key (speciesID)
+);
+
+create table GermplasmOrigins (
+	originID int auto_increment not null unique,
+	originPedigree varchar(255) not null,
+	speciesID int not null,
+	originalGen int not null,
+	sourceProgram int not null,
+	marketClass varchar(255) not null,
+	primary key (originID)
+);
+
+create table RDPrograms (
+	rdProgID int auto_increment not null unique,
+	rdProgDesc varchar(255) not null,
+	primary key (rdProgID)
+);
+
+create table ProductionLots (
+	lotID int auto_increment not null unique,
+	lotCode varchar(255) not null unique,
+	originID int not null,
+	sourceLotID int,
+	specialistID int not null,
+	fieldID int not null,
+	targetKGs decimal(10, 2),
+	sowDate date,
+	sowKGs decimal(10, 2),
+	harvestDate date,
+	harvestKGs decimal(10, 2),
+	primary key (lotID)
+);
+
+create table ProductionFields (
+	fieldID int auto_increment not null unique,
+	fieldName varchar(255) unique not null,
+	fieldCity varchar(255) not null,
+	fieldState varchar(255) not null,
+	fieldCountry varchar(255) not null,
+	fieldAcres decimal(10, 2) not null,
+	fieldLat decimal(10, 5) not null,
+	fieldLon decimal(10, 5) not null,
+	primary key (fieldID)
+);
+
+create table PCSites (
+	siteID int auto_increment not null unique,
+	siteCity varchar(255) not null,
+	siteState varchar(255) not null,
+	siteCountry varchar(255) not null,
+	primary key (siteID)
+);
+
+create table ProductionSpecialists (
+	specialistID int auto_increment not null unique,
+	firstName varchar(255) not null,
+	lastName varchar(255) not null,
+	siteID	int not null,
+	primary key (specialistID)
+);
+
+create table SpecialistMemberships (
+	specialistID int not NULL,
+	pcProgID int not NULL
+);
+
+create table PCPrograms (
+	pcProgID int auto_increment unique not null,
+	pcProgDesc varchar(255) unique not null,
+	primary key (pcProgID)
+);
+
+-- Adding foreign key relationships after tables are created
+alter table GermplasmOrigins
+add foreign key (speciesID) references CropSpecies(speciesID),
+add foreign key (sourceProgram) references RDPrograms(rdProgID);
+
+alter table ProductionLots
+add foreign key (originID) references GermplasmOrigins(originID),
+add foreign key (sourceLotID) references ProductionLots(lotID),
+add foreign key (specialistID) references ProductionSpecialists(specialistID),
+add foreign key (fieldID) references ProductionFields(fieldID);
+
+alter table ProductionSpecialists
+add foreign key (siteID) references PCSites(siteID);
+
+alter table SpecialistMemberships
+add foreign key (specialistID) references ProductionSpecialists(specialistID),
+add foreign key (pcProgID) references PCPrograms(pcProgID);
+
+
