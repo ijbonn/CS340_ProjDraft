@@ -7,13 +7,12 @@ const cors = require('cors')
 
 app.engine('handlebars',handlebars.engine);
 app.set('view engine', 'handlebars');
-app.use(cors())
-app.use(express.static('public'))
+app.use(cors());
+app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
-app.listen(4747,() => {})
-    console.log("listening to port 4747")
+app.set('port', 4747);
 
 //extracted from the get function below as I need to pull all data often to rebuild tables
 let currentData = function(res){
@@ -227,3 +226,7 @@ app.get('/add-data',function(req,res,next){
         res.render('home',context);
         })
     });
+
+app.listen(app.get('port'), function(){
+  console.log('Express started on http://localhost:' + app.get('port') + '; press Ctrl-C to terminate.');
+});
