@@ -1,45 +1,36 @@
-<div>
-        <a href="/"><button class="homeButton">Home</button></a>
-    </div>
-    <div>
-        <h1>Add Specialist Memberships</h1>
-    </div>
-    <div class="formBox">
-        <form method="post" action="">
-            <div class="formInputs">
-                <label for="specialistID">Specialist ID Number: </label>
-                <input type="number" name="specialistID" id="specialistID" placeholder="Specialist ID">
-            </div>
-            <div class="formInputs">
-                <label for="pcProgID">PC Program ID Number: </label>
-                <input type="number" name="pcProgID" id="pcProgID" placeholder="PC Program ID">
-            </div>
-            <div>
-                <input id="form" type="submit" value="Submit">
-            </div>
-        </form>
-    </div>
 
-    <div>
-        <h1>Current Data:</h1>
-        <table id="RDProgramsTable">
-            <thead>
-                <tr>
-                    <td>Specialist ID</td>
-                    <td>PC Program ID</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </thead>
-            <tbody>
-                {{#results}}
-                <tr>
-                    <td>{{this.specialistID}}</td>
-                    <td>{{this.pcProgID}}</td>
-                    <td><button id="D{{this.id}}">Delete</button></td>
-                    <td><button id="u{{this.id}}">Update</button></td>
-                </tr>
-                {{/results}}
-            </tbody>
-        </table>
-    </div>
+<h1>Add Specialist Memberships</h1>
+
+<form method="post" action="">
+    <ul class="formalList">
+        <li><label for="specialistID">Specialist ID Number: </label>
+            <input type="number" name="specialistID" id="specialistID" placeholder="Specialist ID"></li>   
+        <li><label for="pcProgID">PC Program ID Number: </label>
+            <input type="number" name="pcProgID" id="pcProgID" placeholder="PC Program ID"></li>   
+        <input id="form" type="submit" value="Submit">
+    </ul>
+</form>
+  
+<div>
+    <h1>Current Data:</h1>
+    <table id="RDProgramsTable" class="formalTable">
+        <thead>
+            <tr>
+                <th>Specialist ID</th>
+                <th>PC Program ID</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#results}}
+            <tr>
+                <td>{{this.specialistID}}</td>
+                <td>{{this.pcProgID}}</td>
+                <td><input id="D{{this.id}}" type="Submit" value="Delete"></td>
+                <td><input id="u{{this.id}}" type="Submit" value="Update"></td>
+            </tr>
+            {{/results}}
+        </tbody>
+    </table>
+</div>

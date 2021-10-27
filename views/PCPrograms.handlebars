@@ -1,41 +1,35 @@
-<div>
-        <a href="/"><button class="homeButton">Home</button></a>
-    </div>
-    <div>
-        <h1>Add PC Programs</h1>
-    </div>
-    <div class="formBox">
-        <form method="post" action="">
-            <div class="formInputs">
-                <label for="pcProgDesc">PC Program Description: </label>
-                <input type="text" name="pcProgDesc" id="pcProgDesc" placeholder="Description">
-            </div>
-            <div>
-                <input id="form" type="submit" value="Submit">
-            </div>
-        </form>
-    </div>
 
-    <div>
-        <h1>Current Data:</h1>
-        <table id="PCProgramsTable">
-            <thead>
-                <tr>
-                    <td>PC Program ID</td>
-                    <td>Program Description</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </thead>
-            <tbody>
-                {{#results}}
-                <tr>
-                    <td>{{this.pcProgID}}</td>
-                    <td>{{this.pcProgDesc}}</td>
-                    <td><button id="D{{this.id}}">Delete</button></td>
-                    <td><button id="u{{this.id}}">Update</button></td>
-                </tr>
-                {{/results}}
-            </tbody>
-        </table>
-    </div>
+<h1>Add PC Programs</h1>
+
+<form method="post" action="">
+    <ul class="formalList">
+        <li><label for="pcProgDesc">PC Program Description: </label>
+            <input type="text" name="pcProgDesc" id="pcProgDesc" placeholder="Description"></li>
+        <input id="form" type="submit" value="Submit">
+    </ul>
+</form>
+
+
+<div>
+    <h1>Current Data:</h1>
+    <table id="PCProgramsTable" class="formalTable">
+        <thead>
+            <tr>
+                <th>PC Program ID</th>
+                <th>Program Description</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#results}}
+            <tr>
+                <td>{{this.pcProgID}}</td>
+                <td>{{this.pcProgDesc}}</td>
+                <td><input id="D{{this.id}}" type="Submit" value="Delete"></td>
+                <td><input id="u{{this.id}}" type="Submit" value="Update"></td>
+            </tr>
+            {{/results}}
+        </tbody>
+    </table>
+</div>

@@ -1,77 +1,59 @@
-<div>
-        <a href="/"><button class="homeButton">Home</button></a>
-    </div>
-    <div>
-        <h1>Add Production Fields</h1>
-    </div>
-    <div class="formBox">
-        <form method="post" action="">
-            <div class="formInputs">
-                <label for="fieldName">Field Name: </label>
-                <input type="text" name="fieldName" id="fieldName" placeholder="Field Name">
-            </div>
-            <div class="formInputs">
-                <label for="fieldCity">Field City: </label>
-                <input type="text" name="fieldCity" id="fieldCity" placeholder="Field City">
-            </div>
-            <div class="formInputs">
-                <label for="fieldState">Field State: </label>
-                <input type="text" name="fieldState" id="fieldState" placeholder="Field State">
-            </div>
-            <div class="formInputs">
-                <label for="fieldCountry">Field Country: </label>
-                <input type="text" name="fieldCountry" id="fieldCountry" placeholder="Field Country">
-            </div>
-            <div class="formInputs">
-                <label for="fieldAcres">Field Acres: </label>
-                <input type="number" name="fieldAcres" id="fieldAcres" placeholder="Field Acres">
-            </div>
-            <div class="formInputs">
-                <label for="fieldLat">Field Latitude: </label>
-                <input type="number" name="fieldLat" id="fieldLat" placeholder="Field Latitude">
-            </div>
-            <div class="formInputs">
-                <label for="fieldLon">Field Longitude: </label>
-                <input type="number" name="fieldLon" id="fieldLon" placeholder="Field Longitude">
-            </div>
-            <div class="formInputs">
-                <input id="form" type="submit" value="Submit">
-            </div>
-        </form>
-    </div>
 
-    <div>
-        <h1>Current Data:</h1>
-        <table id="ProductionFieldsTable">
-            <thead>
-                <tr>
-                    <td>Prod Field ID</td>
-                    <td>Field Name</td>
-                    <td>Field City</td>
-                    <td>Field State</td>
-                    <td>Field Country</td>
-                    <td>Field Acres</td>
-                    <td>Field Latitude</td>
-                    <td>Field Longitude</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </thead>
-            <tbody>
-                {{#results}}
-                <tr>
-                    <td>{{this.fieldID}}</td>
-                    <td>{{this.fieldName}}</td>
-                    <td>{{this.fieldCity}}</td>
-                    <td>{{this.fieldState}}</td>
-                    <td>{{this.fieldCountry}}</td>
-                    <td>{{this.fieldAcres}}</td>
-                    <td>{{this.fieldLat}}</td>
-                    <td>{{this.fieldLon}}</td>
-                    <td><button id="D{{this.id}}">Delete</button></td>
-                    <td><button id="u{{this.id}}">Update</button></td>
-                </tr>
-                {{/results}}
-            </tbody>
-        </table>
-    </div>
+<h1>Add Production Fields</h1>
+
+<form method="post" action="">
+    <ul class="formalList">
+        <li><label for="fieldName">Field Name: </label>
+            <input type="text" name="fieldName" id="fieldName" placeholder="Field Name"></li>
+        <li><label for="fieldCity">Field City: </label>
+            <input type="text" name="fieldCity" id="fieldCity" placeholder="City"></li>
+        <li><label for="fieldState">Field State: </label>
+            <input type="text" name="fieldState" id="fieldState" placeholder="State"></li>
+        <li><label for="fieldCountry">Field Country: </label>
+            <input type="text" name="fieldCountry" id="fieldCountry" placeholder="Country"></li>
+        <li><label for="fieldAcres">Field Acres: </label>
+            <input type="number" name="fieldAcres" id="fieldAcres" placeholder="Acres"></li>
+        <li><label for="fieldLat">Field Latitude: </label>
+            <input type="number" name="fieldLat" id="fieldLat" placeholder="Latitude"></li>
+        <li><label for="fieldLon">Field Longitude: </label>
+            <input type="number" name="fieldLon" id="fieldLon" placeholder="Longitude"></li>
+        <input id="form" type="submit" value="Submit">
+    </ul>
+</form>
+
+
+<div>
+    <h1>Current Data:</h1>
+    <table id="ProductionFieldsTable" class="formalTable">
+        <thead>
+            <tr>
+                <th>Prod Field ID</th>
+                <th>Field Name</th>
+                <th>Field City</th>
+                <th>Field State</th>
+                <th>Field Country</th>
+                <th>Field Acres</th>
+                <th>Field Latitude</th>
+                <th>Field Longitude</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#results}}
+            <tr>
+                <td>{{tdis.fieldID}}</td>
+                <td>{{tdis.fieldName}}</td>
+                <td>{{tdis.fieldCity}}</td>
+                <td>{{tdis.fieldState}}</td>
+                <td>{{tdis.fieldCountry}}</td>
+                <td>{{tdis.fieldAcres}}</td>
+                <td>{{tdis.fieldLat}}</td>
+                <td>{{tdis.fieldLon}}</td>
+                <td><input id="D{{tdis.id}}" type="Submit" value="Delete"></td>
+                <td><input id="u{{tdis.id}}" type="Submit" value="Update"></td>
+            </tr>
+            {{/results}}
+        </tbody>
+    </table>
+</div>
