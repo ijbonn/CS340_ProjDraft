@@ -109,6 +109,10 @@ input[type=text]:focus, input[type=number]:focus, input[type=date]:focus, select
 	color: #e83e8c;
 }
 
+.formalList li{
+	margin-bottom: 5px;
+}
+
 .indentForm{
 	padding-left: 1em;
 }

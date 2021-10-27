@@ -31,12 +31,12 @@
         <tbody>
             {{#results}}
             <tr>
-                <td>{{tdis.siteID}}</td>
-                <td>{{tdis.siteCity}}</td>
-                <td>{{tdis.siteState}}</td>
-                <td>{{tdis.siteCountry}}</td>
-                <td><input id="D{{tdis.id}}" type="Submit" value="Delete"></td>
-                <td><input id="u{{tdis.id}}" type="Submit" value="Update"></td>
+                <td>{{this.siteID}}</td>
+                <td>{{this.siteCity}}</td>
+                <td>{{this.siteState}}</td>
+                <td>{{this.siteCountry}}</td>
+                <td><input id="D{{this.id}}" type="Submit" value="Delete"></td>
+                <td><input id="u{{this.id}}" type="Submit" value="Update"></td>
             </tr>
             {{/results}}
         </tbody>

@@ -42,16 +42,16 @@
         <tbody>
             {{#results}}
             <tr>
-                <td>{{tdis.fieldID}}</td>
-                <td>{{tdis.fieldName}}</td>
-                <td>{{tdis.fieldCity}}</td>
-                <td>{{tdis.fieldState}}</td>
-                <td>{{tdis.fieldCountry}}</td>
-                <td>{{tdis.fieldAcres}}</td>
-                <td>{{tdis.fieldLat}}</td>
-                <td>{{tdis.fieldLon}}</td>
-                <td><input id="D{{tdis.id}}" type="Submit" value="Delete"></td>
-                <td><input id="u{{tdis.id}}" type="Submit" value="Update"></td>
+                <td>{{this.fieldID}}</td>
+                <td>{{this.fieldName}}</td>
+                <td>{{this.fieldCity}}</td>
+                <td>{{this.fieldState}}</td>
+                <td>{{this.fieldCountry}}</td>
+                <td>{{this.fieldAcres}}</td>
+                <td>{{this.fieldLat}}</td>
+                <td>{{this.fieldLon}}</td>
+                <td><input id="D{{this.id}}" type="Submit" value="Delete"></td>
+                <td><input id="u{{this.id}}" type="Submit" value="Update"></td>
             </tr>
             {{/results}}
         </tbody>
