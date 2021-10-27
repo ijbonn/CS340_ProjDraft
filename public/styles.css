@@ -62,7 +62,7 @@ input[type=submit]{
 }
 
 input[type=submit]:hover{
-	background-color: #00bbff;
+	background-color: #0069D9;
 }
 
 input[type=text], input[type=number], input[type=date], select{
