@@ -61,6 +61,10 @@ input[type=submit]{
 	padding: 5px 10px;
 }
 
+input[type=submit]:hover{
+	background-color: #00bbff;
+}
+
 input[type=text], input[type=number], input[type=date], select{
 	border-radius: 10px;
 	border: 1px solid #6c757d;
