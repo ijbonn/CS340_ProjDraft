@@ -17,16 +17,16 @@
 
 <div>
         <h1>Current Data:</h1>
-        <table id="CropSpeciesTable">
+        <table id="CropSpeciesTable" class="formalTable">
             <thead>
                 <tr>
-                    <td>Species ID</td>
-                    <td>Common Name</td>
-                    <td>Latin Species</td>
-                    <td>Latin Subspecies</td>
-                    <td>Latin Variety</td>
-                    <td></td>
-                    <td></td>
+                    <th>Species ID</td>
+                    <th>Common Name</td>
+                    <th>Latin Species</td>
+                    <th>Latin Subspecies</td>
+                    <th>Latin Variety</td>
+                    <th></td>
+                    <th></td>
                 </tr>
             </thead>
             <tbody>
@@ -37,8 +37,8 @@
                     <td>{{this.latinSpecies}}</td>
                     <td>{{this.latinSubspecies}}</td>
                     <td>{{this.latinVariety}}</td>
-                    <td><button id="D{{this.id}}">Delete</button></td>
-                    <td><button id="u{{this.id}}">Update</button></td>
+                    <td><input id="D{{this.id}}" type="Submit" value="Delete"></td>
+                    <td><input id="u{{this.id}}" type="Submit" value="Update"></td>
                 </tr>
                 {{/results}}
             </tbody>
