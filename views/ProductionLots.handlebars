@@ -27,6 +27,18 @@
     </ul>
 </form>
 
+<div>
+    <label for="lot-filter">Filter By Lot Code:</label>
+    <form action="" method="get">
+    <select name="lotCodeFilter" id="lot-filter">
+        <option value="">Select Lot Code</option>
+        {{#results}}
+        <option value="{{this.lotCode}}">{{this.lotCode}}</option>
+        {{/results}}
+    </select>
+        <input type="submit" value="Filter">  
+    </form>
+</div>
 
 <div>
     <h1>Current Data:</h1>
